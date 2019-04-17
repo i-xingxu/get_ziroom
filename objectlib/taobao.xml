@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+	 <tb_product>
+         <product_ljpl_link type="css selector" value= "[href='#J_Reviews'] " desc="累计评价"></product_ljpl_link>
+         <product_pl_text type="class name" value="tm-rate-fulltxt" desc="评论"></product_pl_text>
+         <product_color_text type="class name" value="rate-sku" desc="净含量，颜色"></product_color_text>
+         <product_next_link type="link text" value="下一页>>" desc="下一页"></product_next_link>
+         <product_next_isnotclick type="class name" value="rate-page-next" desc="不可点击的下一页"></product_next_isnotclick>
+     </tb_product>
+    <trousers>
+        <product_tittle type="class name" value="baoyou-intitle icon-service-free" desc="商品标题"></product_tittle>
+        <product_price type="css selector" value=".price g_price g_price-highlight>strong" desc="商品价格"></product_price>
+        <product_picture type="xpath" value="//img[@class='J_ItemPic img']" desc="标题、图片地址所在元素"></product_picture>
+        <procuct_pic_father type="xpath" value="//img[@class='J_ItemPic img']/.." desc="标题、图片地址所在元素父节点"></procuct_pic_father>
+        <next_btn type="link text" value="下一页" desc="下一页按钮"></next_btn>
+        <next_btn_isnoclick type="class name" value="icon icon-btn-next-2-disable" desc="不可点击的下一页"></next_btn_isnoclick>
+        <index_input type="id" value="q" desc="淘宝首页输入框"></index_input>
+        <index_search type="xpath" value="//button[@class='btn-search tb-bg']" desc="搜索按钮"></index_search>
+        <product_fxyz type="xpath" value="//div[contains(text(),'访问验证')]" desc="访问验证弹窗"></product_fxyz>
+    </trousers>
+</page>
