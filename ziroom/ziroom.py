@@ -14,8 +14,8 @@ from PIL import Image
 import PIL.ImageOps
 from aip import AipOcr
 import json
-from base import webbase
-from common import conf,logoutput,getxml,mysql
+from vi.base import webbase
+from vi.common import conf,logoutput,getxml,mysql
 import pandas as pd
 
 class Ziroom():
