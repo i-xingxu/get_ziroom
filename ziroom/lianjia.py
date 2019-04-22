@@ -11,8 +11,8 @@ import re
 from PIL import Image
 import PIL.ImageOps
 import json
-from vi.base import webbase
-from vi.common import conf,logoutput,getxml,mysql
+from base import webbase
+from common import conf,logoutput,getxml,mysql
 import pandas as pd
 
 class Lianjia():
