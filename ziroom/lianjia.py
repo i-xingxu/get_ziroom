@@ -115,25 +115,32 @@ class Lianjia():
 
         pattern=re.compile(r"class=\"fl oneline\">楼层：.*?</li>")
         # patternPlace=re.compile(r"距离.*?<span>(.*?)</span>(.*?)</span>",re.S)
-        d=re.findall(pattern, pageInfo)[0]
-        d=d.split(">")[1]
-        d=d.split("<")[0]
-        d=d.split("：")[1]
-        roomInfo["楼层"]=d
+        try:
+            d=re.findall(pattern, pageInfo)[0]
+            d=d.split(">")[1]
+            d=d.split("<")[0]
+            d=d.split("：")[1]
+            roomInfo["楼层"]=d
 
-        resultPlace=re.search(r"距离\n.*?<span>(.*?)</span>.*?<span>(.*?)</span>",pageInfo,re.S)
-        if resultPlace:
-            roomInfo["交通位置"]=resultPlace.group(1)+resultPlace.group(2)
-        else:
-            roomInfo["交通位置"]="无交通信息"
+            resultPlace=re.search(r"距离\n.*?<span>(.*?)</span>.*?<span>(.*?)</span>",pageInfo,re.S)
+            if resultPlace:
+                roomInfo["交通位置"]=resultPlace.group(1)+resultPlace.group(2)
+            else:
+                roomInfo["交通位置"]="无交通信息"
 
-        resultName=re.search(r"g_conf.name = \'(.*?)\';",pageInfo,re.S)
-        if resultName:
-            roomInfo["小区名称"]=resultName.group(1)
-        # print(roomInfo)
-        resultRent=re.search(r"class=\"house\"></i>(.*?)</span>",pageInfo,re.S)
-        if resultRent:
-            roomInfo["租房类型"]=resultRent.group(1)
+            resultName=re.search(r"g_conf.name = \'(.*?)\';",pageInfo,re.S)
+            if resultName:
+                roomInfo["小区名称"]=resultName.group(1)
+            # print(roomInfo)
+            resultRent=re.search(r"class=\"house\"></i>(.*?)</span>",pageInfo,re.S)
+            if resultRent:
+                roomInfo["租房类型"]=resultRent.group(1)
+        except:
+            roomInfo["楼层"]='无'
+            roomInfo["交通位置"] = "无"
+            roomInfo["小区名称"] ='无'
+            roomInfo["租房类型"] ='无'
+
 
         return roomInfo
 
